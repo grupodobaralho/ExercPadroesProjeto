@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -5,9 +6,8 @@ public class App {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 
-		PassaporteFactory passaporteFactory = new PassaporteFactory();
-		String tipoDePassaporte = "";
-		Passaporte passaporte = null;
+		PassaporteFactory passaporteFactory = new PassaporteFactory();	
+		Passaporte passaporte;
 		
 		String nomeCliente = "";
 		int nroDias;
@@ -15,6 +15,7 @@ public class App {
 		int dia;
 		int mes;
 		int ano;
+		ArrayList<String> listaPromo = new ArrayList<>();
 
 		//########################################################################
 		
@@ -39,28 +40,24 @@ public class App {
 		
 		//#########################################################################
 		
-		System.out.println("Por favor, informe E, S, P, ou I");
-		while(in.hasNextLine()){
-			tipoDePassaporte = in.nextLine();
-			
-			passaporte = passaporteFactory.fazPassaporte(tipoDePassaporte, nomeCliente, nroDias, valorBasico, dia, mes, ano);
-			
-			if(passaporte == null){					
-				System.out.println("Por favor, informe E, S, P, ou I");
-			}
-			
+		System.out.println("Por favor, informe E, S, P, ou I.... PARA SAIR DIGITE exit");	
+		String entra = "";
+		while(entra != "exit"){
+			 entra = in.nextLine();
+			if(entra.equalsIgnoreCase("E") || entra.equalsIgnoreCase("S") || entra.equalsIgnoreCase("P") || entra.equalsIgnoreCase("I")){
+				listaPromo.add(entra.toUpperCase());
+			}				
 		}
+		
+		
+		passaporte = passaporteFactory.fazPassaporte(nomeCliente, nroDias, valorBasico, dia, mes, ano, listaPromo);
 		
 		System.out.println("Valor Total: " + passaporte.valorTotal());
 		
 
-		Passaporte passaporteBasico = new EstudanteUniversitario(new PassaporteBasico
-				(nomeCliente, nroDias, valorBasico, dia, mes, ano));
+		//Passaporte passaporteBasico = new EstudanteUniversitario(new PassaporteBasico
+		//		(nomeCliente, nroDias, valorBasico, dia, mes, ano));
 		
-		
-	}
-	
-	public static void recursao(){
 		
 	}
 
