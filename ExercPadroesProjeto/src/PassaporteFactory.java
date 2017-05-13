@@ -2,32 +2,22 @@ import java.util.ArrayList;
 
 public class PassaporteFactory {
 
-	public Passaporte fazPassaporte(String nomeCliente, int nroDias, double valorBasico,
-			int dia, int mes, int ano, ArrayList<String> listaPromo) {
+	public Passaporte fazPassaporte(String nomeCliente, int nroDias, double valorBasico, int dia, int mes, int ano,
+			ArrayList<String> listaPromo) {
 
-		PassaporteBasico passaporte = new PassaporteBasico(nomeCliente, nroDias, valorBasico, dia, mes, ano);
-		
-		
-		//for(String s : listaPromo) {
-		//	if(s.equals(E)
-		//}
-		
-		
-//		switch (novoTipoPassaporte.toUpperCase()) {
-//		case "E":
-//			return new EstudanteUniversitario(new PassaporteBasico(nomeCliente, nroDias, valorBasico, dia, mes, ano));
-//		case "S":
-//			return new SeguroGarantido(new PassaporteBasico(nomeCliente, nroDias, valorBasico, dia, mes, ano));
-//		case "P":
-//			return new CCPagueBem(new PassaporteBasico(nomeCliente, nroDias, valorBasico, dia, mes, ano));
-//		case "I":
-//			return new CCPagueBem(new PassaporteBasico(nomeCliente, nroDias, valorBasico, dia, mes, ano));
-//		case "ES" : 
-//		default:
-//			break;
+		Passaporte passaporte = new PassaporteBasico(nomeCliente, nroDias, valorBasico, dia, mes, ano);
 
-		//}
-		return null;
+		for (String s : listaPromo) {
+			if (s.equals("E"))
+				passaporte = new EstudanteUniversitario(passaporte);
+			else if (s.equals("S"))
+				passaporte = new SeguroGarantido(passaporte);
+			else if (s.equals("P"))
+				passaporte = new CCPagueBem(passaporte);
+			else if (s.equals("I"))
+				passaporte = new Idoso(passaporte);
+		}
+		return passaporte;
 	}
 
 }

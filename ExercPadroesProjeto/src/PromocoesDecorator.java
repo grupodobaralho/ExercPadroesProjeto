@@ -11,7 +11,7 @@ abstract class PromocoesDecorator implements Passaporte {
 	@Override
 	public String getNomeCliente() {
 		// TODO Auto-generated method stub
-		return null;
+		return tempPassaporte.getNomeCliente();
 	}
 
 	@Override
@@ -46,6 +46,11 @@ abstract class PromocoesDecorator implements Passaporte {
 	
 	public Passaporte getTempPassaporte(){
 		return tempPassaporte;
+	}
+	
+	@Override
+	public String toString(){
+		return tempPassaporte.toString();
 	}
 	
 

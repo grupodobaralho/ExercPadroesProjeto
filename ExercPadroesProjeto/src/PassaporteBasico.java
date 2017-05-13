@@ -46,4 +46,14 @@ public class PassaporteBasico implements Passaporte {
 		return valorTotal;
 	}
 
+	public String toString() {
+		StringBuilder str = new StringBuilder();
+		str.append("\n####PASSAPORTE####\n");
+		str.append("\nNome do Cliente: " + nomeCliente);
+		str.append("\nNumero de Dias: " + nroDias);
+		str.append("\nValor Basico do Ingresso: " + valorBasico);	
+		str.append("\n\nValor Total: " + valorTotal());
+		return str.toString();
+	}
+
 }

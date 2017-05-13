@@ -1,5 +1,3 @@
-import java.util.GregorianCalendar;
-
 public class EstudanteUniversitario extends PromocoesDecorator {
 
 	public EstudanteUniversitario(Passaporte novoPassaporte) {
@@ -8,27 +6,9 @@ public class EstudanteUniversitario extends PromocoesDecorator {
 	}
 	
 	@Override
-	public String getNomeCliente() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getNroDias() {
-		// TODO Auto-generated method stub
-		return super.getTempPassaporte().getNroDias();
-	}
-
-	@Override
-	public double valorBasico() {
-		// TODO Auto-generated method stub
-		return super.getTempPassaporte().valorBasico();
-	}
-
-	@Override
 	public double valorDoDia(int nrodia) {
 		double valorDia = valorBasico();
-		for (int i = 0; i < nrodia - 1; i++) {
+		for (int i = 0; i < nrodia - 1; i++) {			
 			if(nrodia >= 2 && getNroDias() >= 5){
 				valorDia = valorDia - (valorDia * 0.3);
 			}
@@ -38,20 +18,9 @@ public class EstudanteUniversitario extends PromocoesDecorator {
 		}
 		return valorDia;
 	}
-
-	@Override
-	public double valorTotal() {
-		double valorTotal = 0.0;
-		for (int d = 1; d <= getNroDias(); d++) {
-			valorTotal += valorDoDia(d);
-		}
-		return valorTotal;
-	}
-
-	@Override
-	public GregorianCalendar dataInicial() {
-		// TODO Auto-generated method stub
-		return super.getTempPassaporte().dataInicial();
+	
+	public String toString(){
+		return super.toString() + "\n[Estudante Universitario]";
 	}
 
 }

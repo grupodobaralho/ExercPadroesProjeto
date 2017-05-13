@@ -1,5 +1,3 @@
-import java.util.GregorianCalendar;
-
 public class Idoso extends PromocoesDecorator {
 
 	public Idoso(Passaporte novoPassaporte) {
@@ -7,24 +5,6 @@ public class Idoso extends PromocoesDecorator {
 		// TODO Auto-generated constructor stub
 	}
 	
-	@Override
-	public String getNomeCliente() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getNroDias() {
-		// TODO Auto-generated method stub
-		return super.getTempPassaporte().getNroDias();
-	}
-
-	@Override
-	public double valorBasico() {
-		// TODO Auto-generated method stub
-		return super.getTempPassaporte().valorBasico();
-	}
-
 	@Override
 	public double valorDoDia(int nrodia) {
 		double valorDia = valorBasico();
@@ -47,11 +27,9 @@ public class Idoso extends PromocoesDecorator {
 			return super.getTempPassaporte().valorTotal();
 		}
 	}
-
-	@Override
-	public GregorianCalendar dataInicial() {
-		// TODO Auto-generated method stub
-		return super.getTempPassaporte().dataInicial();
+	
+	public String toString(){
+		return super.toString() + "\n[Idoso]" ;
 	}
-
+	
 }
