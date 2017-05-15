@@ -35,12 +35,12 @@ abstract class PromocoesDecorator implements Passaporte {
 	@Override
 	public double valorTotal() {
 		// TODO Auto-generated method stub
-        double valorTotal = 0;
-        for (int d = 1; d <= getNroDias(); d++)
-        {
-            valorTotal += this.valorDoDia(d);
-        }
-        return valorTotal;
+
+		double valorTotal = 0;
+		for (int d = 1; d <= getNroDias(); d++) {
+			valorTotal += this.valorDoDia(d);
+		}
+		return valorTotal;
 	}
 
 	@Override
@@ -48,15 +48,14 @@ abstract class PromocoesDecorator implements Passaporte {
 		// TODO Auto-generated method stub
 		return tempPassaporte.dataInicial();
 	}
-	
-	public Passaporte getTempPassaporte(){
+
+	public Passaporte getTempPassaporte() {
 		return tempPassaporte;
 	}
-	
+
 	@Override
-	public String toString(){
+	public String toString() {
 		return tempPassaporte.toString();
 	}
-	
 
 }

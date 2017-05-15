@@ -8,11 +8,11 @@ public class EstudanteUniversitario extends PromocoesDecorator {
 	@Override
 	public double valorDoDia(int nrodia) {
 		double valorDia = valorBasico();
-		for (int i = 0; i < nrodia - 1; i++) {
+		for (int i = 1; i <= nrodia ; i++) {
 			if (nrodia >= 2 && getNroDias() >= 5) {
-				valorDia = valorDia - (valorDia * 0.3);
+				valorDia = super.valorDoDia(i) - (super.valorDoDia(i) * 0.1);
 			} else {
-				valorDia = valorDia - (valorDia * 0.2);
+				valorDia = super.valorDoDia(i) ;
 			}
 		}
 		return valorDia;

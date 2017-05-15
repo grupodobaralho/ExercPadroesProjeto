@@ -51,7 +51,9 @@ public class PassaporteBasico implements Passaporte {
 		str.append("\n####PASSAPORTE####\n");
 		str.append("\nNome do Cliente: " + nomeCliente);
 		str.append("\nNumero de Dias: " + nroDias);
-		str.append("\nValor Basico do Ingresso: " + valorBasico);		
+		str.append("\nValor Basico do Ingresso: " + valorBasico);
+		
+		
 		return str.toString();
 	}
 
