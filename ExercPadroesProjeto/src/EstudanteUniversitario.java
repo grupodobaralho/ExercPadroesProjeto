@@ -18,6 +18,7 @@ public class EstudanteUniversitario extends PromocoesDecorator {
 		return valorDia;
 	}
 
+
 	public String toString() {
 		return super.toString() + "\n[Estudante Universitario]";
 	}
