@@ -53,12 +53,12 @@ public class App {
 			entra = in.nextLine();
 			if (entra.equalsIgnoreCase("E") || entra.equalsIgnoreCase("S") || entra.equalsIgnoreCase("P")
 					|| entra.equalsIgnoreCase("I")) {
-				listaPromo.add(entra.toUpperCase());
+				listaPromo.add(entra.toUpperCase()); count++;
 			}
 			if (entra.equalsIgnoreCase("exit"))
 				break;
 
-			count++;
+			
 		}
 
 		passaporte = passaporteFactory.fazPassaporte(nomeCliente, nroDias, valorBasico, dia, mes, ano, listaPromo);
